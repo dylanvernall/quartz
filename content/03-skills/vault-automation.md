@@ -96,14 +96,12 @@ Vault automation tools generate large JSON/markdown reports that exceed pre-comm
 
 ```
 99-System/10-Logs/reports/
-99-System/10-Logs/lit-review/
 ```
 
 Or: Create cleanup task in Phase 1 that removes reports older than 24 hours:
 
 ```bash
 find 99-System/10-Logs/reports -name "*.json" -mtime +1 -delete
-find 99-System/10-Logs/lit-review -name "*.json" -mtime +1 -delete
 ```
 
 **Rule**: Keep recent reports (< 24h) for debugging, but don't commit them to git.

@@ -21,7 +21,6 @@ Add folders to `.gitignore` to prevent pre-commit validation:
 
 ```
 99-System/10-Logs/reports/
-99-System/10-Logs/lit-review/
 ```
 
 **Rationale**: Automation reports are ephemeral — useful for debugging in-session but shouldn't be committed.
@@ -32,7 +31,6 @@ Create Phase 1 task that removes reports older than 24 hours:
 
 ```bash
 find 99-System/10-Logs/reports -name "*.json" -mtime +1 -delete
-find 99-System/10-Logs/lit-review -name "*.json" -mtime +1 -delete
 ```
 
 Keep recent reports (< 24h) for debugging, delete older ones before commit.
